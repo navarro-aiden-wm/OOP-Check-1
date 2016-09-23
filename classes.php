@@ -50,5 +50,50 @@ class profile extends account {
     }
 }
 
+abstract class Account2{
+    public $name;
+    protected $password;
+    public $DOB;
+    protected $id;
+    private $data = array();
 
+    function get_name(){
+        return $this->name;
+    }
+
+    public function describe(){
+        echo $this->name. ' was born ' .$this->DOB;
+    }
+    abstract function givePass();
+}
+
+class aiden extends Account2{
+    public function describe(){
+        parent::describe();
+
+    }
+    public function givePass(){
+        echo 'AidenPass';
+    }
+}
+
+class bill extends Account2{
+    public function describe(){
+        parent::describe();
+
+    }
+    public function givePass(){
+        echo 'BillPass';
+    }
+}
+
+class frank extends Account2{
+    public function describe(){
+        parent::describe();
+
+    }
+    public function givePass(){
+        echo 'FrankPass';
+    }
+}
 ?>
